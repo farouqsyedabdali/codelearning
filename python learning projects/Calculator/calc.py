@@ -1,9 +1,9 @@
 while True:
-  ques = int(input("Enter a number: "))
+  ques = float(input("Enter a number: "))
   
   while True:
     funcn = input("A/S/M/D: ").lower()
-    ques2 = int(input("Enter another number: "))
+    ques2 = float(input("Enter another number: "))
     
     if funcn == "a":
       print(ques+ques2)
