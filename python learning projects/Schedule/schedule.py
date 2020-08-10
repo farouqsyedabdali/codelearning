@@ -8,7 +8,8 @@ def mainMenu():
         print("2. Add an event")
         print("3. Remove an event")
         print("4. Search for an event")
-        print("5. Quit\n")
+        print("5. Edit an event")
+        print("6. Quit\n")
 
         while True:
             try: #Error checks the input
@@ -25,7 +26,10 @@ def mainMenu():
             removeEvent()
         elif selection == 4:
             searchEvent()
-        elif selection == 5: #Quits the program
+        elif selection == 5:
+            editEvent()
+        elif selection == 6: #Quits the program
+            print("\nExiting...\n")
             break
         else:
             print("\nNot a valid selection!")
@@ -68,10 +72,32 @@ def searchEvent():
     search = input("What do you want to look for? ")
     for i in events:
         if search in i:
-            print("Test passed")
+            print(f"{search} is in your schedule")
             break
-        else:
-            pass
+    else:
+        print(f"{search} is not in your schedule")
+
+def editEvent():
+    new_events = []
+
+    old_event = input("What event do you want to edit? ")
+    
+    for i in events:
+        if old_event in i:
+            new_event = input("What is this event called? ")
+            new_time = input("What time will this event be? ")
+            new_date = input("What date? ")
+            new_place = input("Where will this event be? ")
+            
+            events.remove(i)
+            new_events.append(new_event)
+            new_events.append(new_time)
+            new_events.append(new_date)
+            new_events.append(new_place)
+
+            events.append(new_events)
+    else:
+        print(f"{old_event} not in schedule")
 
 
 mainMenu() #Runs through the entire program
