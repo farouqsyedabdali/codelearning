@@ -1,7 +1,7 @@
 events = [] #List of events
 
 def mainMenu():
-    print("Welcome to your Schedule!")
+
     while True: #Runs the whole function until user quits
         print("\nWhat would you like to do?\n")
         print("1. Read all of your events")
@@ -9,7 +9,7 @@ def mainMenu():
         print("3. Remove an event")
         print("4. Search for an event")
         print("5. Edit an event")
-        print("6. Quit\n")
+        print("6. Return to the main menu\n")
 
         while True:
             try: #Error checks the input
@@ -28,7 +28,7 @@ def mainMenu():
             searchEvent()
         elif selection == 5:
             editEvent()
-        elif selection == 6: #Quits the program
+        elif selection == 6: #Returns to the home page
             print("\nExiting...\n")
             break
         else:
@@ -98,6 +98,3 @@ def editEvent():
             events.append(new_events)
     else:
         print(f"{old_event} not in schedule")
-
-
-mainMenu() #Runs through the entire program

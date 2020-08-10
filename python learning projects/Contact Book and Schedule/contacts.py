@@ -1,10 +1,6 @@
 contact_list = []
 
 def mainMenu():
-    print("Welcome to your contact book!")
-    name = input("What is your name? ")
-      
-    print(f"\nHello, {name}")
 
     while True: #Lists all of the available options until user quits
         print("\nWhat would you like to do?")
@@ -13,7 +9,7 @@ def mainMenu():
         print("3. Remove a contact")
         print("4. Search for a contact")
         print("5. Edit a contact")
-        print("6. Quit\n")
+        print("6. Return to the main menu\n")
 
         while True: #Error checks the input
             try:
@@ -32,7 +28,7 @@ def mainMenu():
             searchContact()
         elif selection == 5:
             editContact()
-        elif selection == 6: #Quits the program
+        elif selection == 6: #Returns to the home page
             print("\nExiting...\n")
             break
         else:
@@ -80,5 +76,3 @@ def editContact():
             break
         except:
             print(f"\nThere is no one named {old_name} in your contacts. Try again!")
-
-mainMenu() #Runs main menu function that starts the program
