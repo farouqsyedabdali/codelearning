@@ -3,7 +3,7 @@ import schedule
 import expensestrack
 
 def mainMenu():
-    print("Welcome to your contact book and schedule!")
+    print("Welcome to the Hub!")
     name = input("What is your name? ")
 
     print(f"Hello, {name}!")
