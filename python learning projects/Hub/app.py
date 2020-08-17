@@ -27,7 +27,7 @@ def mainMenu():
             contacts.mainMenu()
         elif select == 2: #Runs Schedule.py main menu function
             schedule.mainMenu()
-        elif select == 3:
+        elif select == 3: #Runs Expensestrack.py main menu function
             expensestrack.mainMenu()
         elif select == 4:
             print("\nExiting...")
