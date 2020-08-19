@@ -9,7 +9,8 @@ def mainMenu():
         print("\nWhat would you like to do?\n")
         print("1. Read your expenses")
         print("2. Add expenses")
-        print("3. Return to the main menu\n")
+        print("3. Reset your expenses")
+        print("4. Return to the main menu\n")
     
         while True: #Error checks the input
             try:
@@ -23,13 +24,15 @@ def mainMenu():
         elif selection == 2:
             addExpense()
         elif selection == 3:
+            reset()
+        elif selection == 4:
             print("\nExiting...\n")
             break
 
 
 def readExpenses():
     if len(expenses) == 0:
-        print("You have no expenses listed")
+        print("\nYou have no expenses listed")
     else:
         print("-------------------------")
         for i in expenses: #Prints each expense in list seperated by a "-"
@@ -48,14 +51,14 @@ def addExpense():
     global average_price
     global total_items
 
-    added_expense = input("What did you purchase? ")
+    added_expense = input("\nWhat did you purchase? ")
     while True: #Error checks the input
         try:
-            added_price = int(input("What is the price of the purchase after tax? "))
-            added_count = int(input("How many did you purchase? "))
+            added_price = int(input("\nWhat is the price of the purchase after tax? "))
+            added_count = int(input("\nHow many did you purchase? "))
             break
         except:
-            print("Please make a valid selection! ")
+            print("\nPlease make a valid selection! ")
 
     new_list.append(added_expense)
     new_list.append(f"{added_price} dollars")
@@ -66,3 +69,21 @@ def addExpense():
     average_price = total_price/total_items
 
     expenses.append(new_list)
+
+def reset():
+    global expenses #Accesses global variable
+
+    while True:
+        check = input("Are you sure you want to reset? There is no going back. Y/N: ").lower()
+
+        if check == "y":
+            expenses = []
+            print("All expenses have been removed")
+            break
+        elif check == "n":
+            print("Operation cancelled")
+            break
+        else:
+            print("Please enter a valid selection!")
+
+mainMenu()
