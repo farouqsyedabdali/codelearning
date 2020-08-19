@@ -85,5 +85,3 @@ def reset():
             break
         else:
             print("Please enter a valid selection!")
-
-mainMenu()
