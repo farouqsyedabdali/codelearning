@@ -14,10 +14,10 @@ class Password():
                 self.length = int(input("How long do you want the password? "))
                 break
             except:
-                print("Make a valid selection!")
+                print("\nMake a valid selection!\n")
         
         while True:
-            self.sec_level = input("What security level would you like? Low/Medium/High: ").lower()
+            self.sec_level = input("\nWhat security level would you like? Low/Medium/High: ").lower()
 
             if self.sec_level == "low":
                 self.generate("low")
@@ -29,13 +29,13 @@ class Password():
                 self.generate("high")
                 break
             else:
-                print("Make a valid selection!")
+                print("\nMake a valid selection!\n")
     
 
     def generate(self, security):
         new_pass = []
 
-        print("Generating...")
+        print("\nGenerating...\n")
 
         if security == "low":
             for i in range(self.length):
@@ -51,17 +51,27 @@ class Password():
 
 
         while True:
-            redo = input("Would you like to create a new password?")
+            redo = input("Would you like to create a new password? ").lower()
             if redo == "y":
                 self.create()
             elif redo == "n":
-                print("Exiting...")
+                print("\nExiting...")
                 break
             else:
-                print("Please make a valid selection!")
+                print("\nPlease make a valid selection!")
             
 
-print("Welcome to the Password Generator!")
+print("Welcome to the Password Generator!\n")
 
 p = Password()
 p.create()
+
+while True:
+    redo = input("Would you like to create a new password? ").lower()
+    if redo == "y":
+        p.create()
+    elif redo == "n":
+        print("\nExiting...")
+        break
+    else:
+        print("\nPlease make a valid selection!")
