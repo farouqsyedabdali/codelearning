@@ -49,16 +49,6 @@ class Password():
 
         print(*new_pass, sep="")
 
-
-        while True:
-            redo = input("Would you like to create a new password? ").lower()
-            if redo == "y":
-                self.create()
-            elif redo == "n":
-                print("\nExiting...")
-                break
-            else:
-                print("\nPlease make a valid selection!")
             
 
 print("Welcome to the Password Generator!\n")
