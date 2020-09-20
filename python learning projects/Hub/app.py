@@ -1,6 +1,8 @@
 import contacts
 import schedule
 import expensestrack
+import todolist
+
 
 def mainMenu():
     print("Welcome to the Hub!")
@@ -13,7 +15,8 @@ def mainMenu():
         print("\n1. Go to your contact book")
         print("2. Go to your schedule")
         print("3. Read your expenses")
-        print("4. Quit\n")
+        print("4. Read your to-do list")
+        print("5. Quit\n")
 
         while True:
             try: #Error checks the input
@@ -30,6 +33,8 @@ def mainMenu():
         elif select == 3: #Runs Expensestrack.py main menu function
             expensestrack.mainMenu()
         elif select == 4:
+            todolist.mainMenu() #Runs todolist.py main menu function
+        elif select == 5:
             print("\nExiting...")
             break
         else:

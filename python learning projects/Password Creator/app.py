@@ -4,13 +4,13 @@ import string
 
 class Password():
     def __init__(self):
-        self.length = 0
-        self.sec_level = ""
+        self.length = 0 #Length of password
+        self.sec_level = "" #Security level of password
     
 
     def create(self):
         while True:
-            try:
+            try: #Error checks the input
                 self.length = int(input("How long do you want the password? "))
                 break
             except:
@@ -32,7 +32,7 @@ class Password():
                 print("\nMake a valid selection!\n")
     
 
-    def generate(self, security):
+    def generate(self, security): #Generates password based on security level
         new_pass = []
 
         print("\nGenerating...\n")
@@ -53,8 +53,8 @@ class Password():
 
 print("Welcome to the Password Generator!\n")
 
-p = Password()
-p.create()
+p = Password() #Creates password object
+p.create() #Runs the program
 
 while True:
     redo = input("Would you like to create a new password? ").lower()
